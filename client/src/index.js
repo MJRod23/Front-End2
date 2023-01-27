@@ -14,6 +14,7 @@ import SignUpPage from './pages/SignUp';
 import LoginPage from './pages/Login';
 import RecipeDetail from './pages/RecipeDetail';
 import Search from './pages/Search';
+import Footer from './components/Footer';
 
 const App = () => {
 
@@ -39,6 +40,7 @@ const App = () => {
                         <HomePage />
                     </Route>
                 </Switch>
+                <Footer/>
             </div>
         </Router>
     )
