@@ -13,48 +13,7 @@ const SignUpPage = () => {
     const [serverResponse, setServerResponse] = useState('')
     const history = useHistory()
 
-    const submitForm = (data) => {
-
-
-        if (data.password === data.confirmPassword) {
-
-
-            const body = {
-                username: data.username,
-                email: data.email,
-                password: data.password
-            }
-
-            const requestOptions = {
-                method: "POST",
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(body)
-            }
-
-
-            fetch('http://localhost:5000/auth/signup', requestOptions)
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    setServerResponse(data.message)
-                    setShow(true)
-                    history.push('/login')
-
-                })
-                .catch(err => console.log(err))
-
-            reset()
-        }
-
-        else {
-            alert("Passwords do not match")
-        }
-
-
-    }
-
+    
 
     return (
         <div className="container">
